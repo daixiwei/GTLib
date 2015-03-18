@@ -1,0 +1,9 @@
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\bin\Debug\GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\bin\Debug\Windows_GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\bin\Debug\GTLib.pdb
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\bin\Debug\Windows_GTLib.pdb
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Work\ProjectAll\C#Works\GTLib\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

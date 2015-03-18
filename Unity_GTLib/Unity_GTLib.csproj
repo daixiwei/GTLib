@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{295666AE-28AD-4C24-8CBF-BCFCE9445AA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Unity_GTLib</RootNamespace>
+    <AssemblyName>Unity_GTLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="UnityEngine">
+      <HintPath>.\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\ResourcesBundle.cs" />
+    <Compile Include="Assets\UnityAssetManager.cs" />
+    <Compile Include="Assets\UnityAssetsBundle.cs" />
+    <Compile Include="Coroutine\UnityCoroutineManager.cs" />
+    <Compile Include="Coroutine\UnityCoroutineObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uniSWF\MovieClipBehaviour.cs" />
+    <Compile Include="uniSWF\MovieClipBlendMode.cs" />
+    <Compile Include="uniSWF\pumpkin\displayInternal\FastGraphicsDrawMeshGenerator.cs" />
+    <Compile Include="uniSWF\pumpkin\displayInternal\GraphicsMeshGenerator.cs" />
+    <Compile Include="uniSWF\pumpkin\displayInternal\IGraphicsGenerator.cs" />
+    <Compile Include="uniSWF\pumpkin\display\DisplayObject.cs" />
+    <Compile Include="uniSWF\pumpkin\display\DisplayObjectContainer.cs" />
+    <Compile Include="uniSWF\pumpkin\display\MovieClip.cs" />
+    <Compile Include="uniSWF\pumpkin\display\MovieClipPlayer.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\BitmapAssetInfo.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\BuiltinResourceLoader.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\DisplayObjectInfo.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\Matrix.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\MovieClipAssetInfo.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\MovieClipReader.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\SwfAssetContext.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\SwfURI.cs" />
+    <Compile Include="uniSWF\pumpkin\swf\TransformInfo.cs" />
+    <Compile Include="UnityGameManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GTLib\GTLib.csproj">
+      <Project>{aa4e1121-e5b2-40e2-a83f-797f255e9c5c}</Project>
+      <Name>GTLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

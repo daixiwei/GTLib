@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA4E1121-E5B2-40E2-A83F-797F255E9C5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTLib</RootNamespace>
+    <AssemblyName>GTLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\AssetParameter.cs" />
+    <Compile Include="Assets\BaseAssetManager.cs" />
+    <Compile Include="Assets\IAssetBundle.cs" />
+    <Compile Include="Coroutine\CoroutineManager.cs" />
+    <Compile Include="Coroutine\CoroutineObject.cs" />
+    <Compile Include="Coroutine\GTWaitForSeconds.cs" />
+    <Compile Include="Coroutine\IWaitCoroutine.cs" />
+    <Compile Include="Entities\IMPArray.cs" />
+    <Compile Include="Entities\IMPObject.cs" />
+    <Compile Include="Entities\MPArray.cs" />
+    <Compile Include="Entities\MPArrayEnumerator.cs" />
+    <Compile Include="Entities\MPDataSerializer.cs" />
+    <Compile Include="Entities\MPDataType.cs" />
+    <Compile Include="Entities\MPDataWrapper.cs" />
+    <Compile Include="Entities\MPObject.cs" />
+    <Compile Include="Entities\Serializable.cs" />
+    <Compile Include="Events\BaseEvent.cs" />
+    <Compile Include="Events\EventDispatcher.cs" />
+    <Compile Include="Events\EventListenerDelegate.cs" />
+    <Compile Include="Events\IDispatchable.cs" />
+    <Compile Include="GTLib.cs" />
+    <Compile Include="IAssetManager.cs" />
+    <Compile Include="IGameManager.cs" />
+    <Compile Include="INetManager.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="MPNet\MessageTransmitter.cs" />
+    <Compile Include="MPNet\Bitswarm\BitSwarmClient.cs" />
+    <Compile Include="MPNet\Bitswarm\BitSwarmEvent.cs" />
+    <Compile Include="MPNet\Bitswarm\IMessage.cs" />
+    <Compile Include="MPNet\Bitswarm\IoHandler.cs" />
+    <Compile Include="MPNet\Bitswarm\IUDPManager.cs" />
+    <Compile Include="MPNet\Bitswarm\Message.cs" />
+    <Compile Include="MPNet\Bitswarm\PacketReadState.cs" />
+    <Compile Include="MPNet\Bitswarm\PacketReadTransition.cs" />
+    <Compile Include="MPNet\Bitswarm\PendingPacket.cs" />
+    <Compile Include="MPNet\Bitswarm\UDPManager.cs" />
+    <Compile Include="MPNet\ClientDisconnectionReason.cs" />
+    <Compile Include="MPNet\Controllers\BaseController.cs" />
+    <Compile Include="MPNet\Controllers\ExtensionController.cs" />
+    <Compile Include="MPNet\Controllers\IController.cs" />
+    <Compile Include="MPNet\Controllers\SystemController.cs" />
+    <Compile Include="MPNet\Core\IProtocolCodec.cs" />
+    <Compile Include="MPNet\Core\MPEvent.cs" />
+    <Compile Include="MPNet\Core\MPIOHandler.cs" />
+    <Compile Include="MPNet\Core\PacketHeader.cs" />
+    <Compile Include="MPNet\Core\ProtocolCodec.cs" />
+    <Compile Include="MPNet\Core\Sockets\ConnectionDelegate.cs" />
+    <Compile Include="MPNet\Core\Sockets\ISocketLayer.cs" />
+    <Compile Include="MPNet\Core\Sockets\OnDataDelegate.cs" />
+    <Compile Include="MPNet\Core\Sockets\OnErrorDelegate.cs" />
+    <Compile Include="MPNet\Core\Sockets\TCPSocketLayer.cs" />
+    <Compile Include="MPNet\Core\Sockets\UDPSocketLayer.cs" />
+    <Compile Include="MPNet\LagMonitor.cs" />
+    <Compile Include="MPNet\ExtensionHandler.cs" />
+    <Compile Include="MPNet\MPNetManager.cs" />
+    <Compile Include="MPNet\MPUser.cs" />
+    <Compile Include="MPNet\MPNetClient.cs" />
+    <Compile Include="MPNet\Requests\BaseRequest.cs" />
+    <Compile Include="MPNet\Requests\ExtensionRequest.cs" />
+    <Compile Include="MPNet\Requests\HandshakeRequest.cs" />
+    <Compile Include="MPNet\Requests\IRequest.cs" />
+    <Compile Include="MPNet\Requests\LoginRequest.cs" />
+    <Compile Include="MPNet\Requests\LogoutRequest.cs" />
+    <Compile Include="MPNet\Requests\ManualDisconnectionRequest.cs" />
+    <Compile Include="MPNet\Requests\PingPongRequest.cs" />
+    <Compile Include="MPNet\Requests\RequestDelegate.cs" />
+    <Compile Include="MPNet\Requests\RequestType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Units\ByteArray.cs" />
+    <Compile Include="Units\FiniteStateMachine.cs" />
+    <Compile Include="Units\FSMState.cs" />
+    <Compile Include="Units\GTUnit.cs" />
+    <Compile Include="Units\Logger.cs" />
+    <Compile Include="Units\XMLNode.cs" />
+    <Compile Include="Units\XMLNodeList.cs" />
+    <Compile Include="Units\XMLParser.cs" />
+    <Compile Include="Units\zlib\Adler32.cs" />
+    <Compile Include="Units\zlib\Deflate.cs" />
+    <Compile Include="Units\zlib\InfBlocks.cs" />
+    <Compile Include="Units\zlib\InfCodes.cs" />
+    <Compile Include="Units\zlib\Inflate.cs" />
+    <Compile Include="Units\zlib\InfTree.cs" />
+    <Compile Include="Units\zlib\StaticTree.cs" />
+    <Compile Include="Units\zlib\SupportClass.cs" />
+    <Compile Include="Units\zlib\Tree.cs" />
+    <Compile Include="Units\zlib\ZInputStream.cs" />
+    <Compile Include="Units\zlib\Zlib.cs" />
+    <Compile Include="Units\zlib\ZOutputStream.cs" />
+    <Compile Include="Units\zlib\ZStream.cs" />
+    <Compile Include="Units\zlib\ZStreamException.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

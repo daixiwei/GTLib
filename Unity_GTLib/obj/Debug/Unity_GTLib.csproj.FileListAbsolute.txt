@@ -1,0 +1,8 @@
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\bin\Debug\Unity_GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\bin\Debug\Unity_GTLib.pdb
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\bin\Debug\GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\bin\Debug\UnityEngine.dll
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\bin\Debug\GTLib.pdb
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\obj\Debug\Unity_GTLib.csprojResolveAssemblyReference.cache
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\obj\Debug\Unity_GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\Unity_GTLib\obj\Debug\Unity_GTLib.pdb

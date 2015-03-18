@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTLib", "GTLib\GTLib.csproj", "{AA4E1121-E5B2-40E2-A83F-797F255E9C5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity_GTLib", "Unity_GTLib\Unity_GTLib.csproj", "{295666AE-28AD-4C24-8CBF-BCFCE9445AA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows_GTLib", "Windows_GTLib\Windows_GTLib.csproj", "{55A07023-6935-4AE5-AAB4-BFDA108EC1C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{CEC6920F-83D8-46CF-8306-E7BC2A6CBB2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA4E1121-E5B2-40E2-A83F-797F255E9C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4E1121-E5B2-40E2-A83F-797F255E9C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4E1121-E5B2-40E2-A83F-797F255E9C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4E1121-E5B2-40E2-A83F-797F255E9C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295666AE-28AD-4C24-8CBF-BCFCE9445AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295666AE-28AD-4C24-8CBF-BCFCE9445AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295666AE-28AD-4C24-8CBF-BCFCE9445AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295666AE-28AD-4C24-8CBF-BCFCE9445AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A07023-6935-4AE5-AAB4-BFDA108EC1C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A07023-6935-4AE5-AAB4-BFDA108EC1C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A07023-6935-4AE5-AAB4-BFDA108EC1C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A07023-6935-4AE5-AAB4-BFDA108EC1C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC6920F-83D8-46CF-8306-E7BC2A6CBB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC6920F-83D8-46CF-8306-E7BC2A6CBB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC6920F-83D8-46CF-8306-E7BC2A6CBB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC6920F-83D8-46CF-8306-E7BC2A6CBB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

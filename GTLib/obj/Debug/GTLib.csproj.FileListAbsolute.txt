@@ -1,0 +1,4 @@
+D:\Work\ProjectAll\C#Works\GTLib\GTLib\bin\Debug\GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\GTLib\bin\Debug\GTLib.pdb
+D:\Work\ProjectAll\C#Works\GTLib\GTLib\obj\Debug\GTLib.dll
+D:\Work\ProjectAll\C#Works\GTLib\GTLib\obj\Debug\GTLib.pdb
