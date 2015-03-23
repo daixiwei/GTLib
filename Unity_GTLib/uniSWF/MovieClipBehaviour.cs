@@ -119,7 +119,7 @@ public class MovieClipBehaviour : MonoBehaviour
     /// <param name="fps"></param>
     public void SetFps(float fps)
     {
-        fps = (int)fps;
+        this.fps = (int)fps;
         updateInterval = 1f / fps;
         frameDrift = 0.0f;
         t = 0.0f;

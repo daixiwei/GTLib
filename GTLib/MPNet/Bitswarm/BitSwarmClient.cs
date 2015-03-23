@@ -173,10 +173,10 @@ namespace com.gt.mpnet.bitswarm
             if (socket == null)
             {
                 socket = new TCPSocketLayer(this);
-                socket.OnConnect = (ConnectionDelegate)Delegate.Combine(this.socket.OnConnect, new ConnectionDelegate(this.OnSocketConnect));
-                socket.OnDisconnect = (ConnectionDelegate)Delegate.Combine(this.socket.OnDisconnect, new ConnectionDelegate(this.OnSocketClose));
-                socket.OnData = (OnDataDelegate)Delegate.Combine(this.socket.OnData, new OnDataDelegate(this.OnSocketData));
-                socket.OnError = (OnErrorDelegate)Delegate.Combine(this.socket.OnError, new OnErrorDelegate(this.OnSocketError));
+                socket.OnConnect = (ConnectionDelegate)Delegate.Combine(socket.OnConnect, new ConnectionDelegate(OnSocketConnect));
+                socket.OnDisconnect = (ConnectionDelegate)Delegate.Combine(socket.OnDisconnect, new ConnectionDelegate(OnSocketClose));
+                socket.OnData = (OnDataDelegate)Delegate.Combine(socket.OnData, new OnDataDelegate(OnSocketData));
+                socket.OnError = (OnErrorDelegate)Delegate.Combine(socket.OnError, new OnErrorDelegate(OnSocketError));
             }
         }
 
@@ -222,16 +222,16 @@ namespace com.gt.mpnet.bitswarm
         /// </summary>
         private void OnSocketClose()
         {
-            bool flag = (this.mpnet == null) || (!attemptingReconnection );
-            bool manualDisconnection = this.manualDisconnection;
-            this.manualDisconnection = false;
-            if ((attemptingReconnection || flag) || manualDisconnection)
+            bool flag = mpnet == null || !attemptingReconnection ;
+            bool md = manualDisconnection;
+            manualDisconnection = false;
+            if ((attemptingReconnection || flag) || md)
             {
                 if (udpManager != null)
                 {
                     udpManager.Reset();
                 }
-                if (manualDisconnection)
+                if (md)
                 {
                     Hashtable arguments = new Hashtable();
                     arguments["reason"] = ClientDisconnectionReason.MANUAL;
@@ -240,8 +240,7 @@ namespace com.gt.mpnet.bitswarm
             }
             else
             {
-                string[] messages = new string[] { "Attempting reconnection in " + this.ReconnectionSeconds + " sec" };
-                log.Debug(messages);
+                log.Debug("Attempting reconnection in " + this.ReconnectionSeconds + " sec");
                 attemptingReconnection = true;
                 DispatchEvent(new BitSwarmEvent(BitSwarmEvent.RECONNECTION_TRY));
                 RetryConnection(ReconnectionSeconds * 0x3e8);

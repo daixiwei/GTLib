@@ -259,9 +259,9 @@
         /// 
         /// </summary>
         /// <param name="evt"></param>
-        public void HandleHandShake(BaseEvent evt)
+        public void HandleHandShake(IMPObject parameters)
         {
-            IMPObject obj2 = evt.Params["message"] as IMPObject;
+            IMPObject obj2 = parameters;
             if (obj2.IsNull(BaseRequest.KEY_ERROR_CODE))
             {
                 sessionToken = obj2.GetUtfString(HandshakeRequest.KEY_SESSION_TOKEN);

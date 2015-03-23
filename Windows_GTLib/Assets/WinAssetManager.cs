@@ -35,7 +35,7 @@ namespace com.platform.windows.assets
         /// <param name="loadType"></param>
         public override void LoadAsset(string path, string loadType)
         {
-            LoadAsset(new AssetParameter(path, AssetParameterType.PersistentDataPath, AssetStorageType.Temporary), loadType);
+            LoadAsset(new AssetParameter(path,  AssetStorageType.Temporary), loadType);
         }
 
         /// <summary>
@@ -111,15 +111,6 @@ namespace com.platform.windows.assets
         {
             string path = "";
             string type = "Resources";
-            switch (parameter.PathType)
-            {
-                case AssetParameterType.PersistentDataPath:
-                    type = "Persistent";
-                    break;
-                case AssetParameterType.StreamingAssetsPath:
-                    type = "StreamingAssets";
-                    break;
-            }
             path = Directory.GetCurrentDirectory() + type + "/";
             return path + parameter.Path;
         }

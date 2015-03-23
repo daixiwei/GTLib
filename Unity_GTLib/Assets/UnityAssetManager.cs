@@ -30,7 +30,7 @@ namespace com.platform.unity.assets
         /// <param name="loadType"></param>
         public override void LoadAsset(string path, string loadType)
         {
-            LoadAsset(new AssetParameter(path, AssetParameterType.PersistentDataPath, AssetStorageType.Temporary), loadType);
+            LoadAsset(new AssetParameter(path,  AssetStorageType.Temporary), loadType);
         }
 
         /// <summary>
@@ -81,7 +81,6 @@ namespace com.platform.unity.assets
         internal void  RemoveCacheAsset(IAssetBundle bundle)
         {
             assets.Remove(bundle.Name);
-            if (bundle.Parameter.PathType == AssetParameterType.Resources) return;
         }
 
         /// <summary>

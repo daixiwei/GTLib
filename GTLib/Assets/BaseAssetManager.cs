@@ -136,7 +136,7 @@ namespace com.gt.assets
         /// <param name="loadType"></param>
         public virtual void LoadAsset(string path, string loadType)
         {
-            LoadAsset(new AssetParameter(path, AssetParameterType.PersistentDataPath, AssetStorageType.Temporary));
+            LoadAsset(new AssetParameter(path,  AssetStorageType.Temporary));
         }
 
         /// <summary>

@@ -31,11 +31,7 @@ namespace com.gt.mpnet.controllers
 
         private void FnHandshake(IMessage msg)
         {
-            Hashtable data = new Hashtable();
-            data["message"] = msg.Content;
-            MPEvent evt = new MPEvent(MPEvent.HANDSHAKE, data);
-            mpnet.HandleHandShake(evt);
-            mpnet.DispatchEvent(evt);
+            mpnet.HandleHandShake(msg.Content);
         }
 
         private void FnLogin(IMessage msg)

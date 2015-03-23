@@ -16,7 +16,7 @@
         /// <summary>
         /// 
         /// </summary>
-        public const string HANDSHAKE = "handshake";
+        //public const string HANDSHAKE = "handshake";
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +40,7 @@
         /// <summary>
         /// 
         /// </summary>
-        public static readonly string EXTENSION_RESPONSE = "extensionResponse";
+        //public static readonly string EXTENSION_RESPONSE = "extensionResponse";
         /// <summary>
         /// 
         /// </summary>

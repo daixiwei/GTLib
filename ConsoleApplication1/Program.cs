@@ -16,7 +16,7 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        public const int CONNECTNUM = 1;
+        public const int CONNECTNUM = 4999;
 
         public const string EVENT_CONNECT = "conn";
         public const string EVENT_CONNECT_LOST = "lost";
@@ -55,7 +55,7 @@ namespace ConsoleApplication1
                 GTLib.NetManager.AddEventListener(EVENT_TEST + i, delegate(BaseEvent evt)
                 {
                     GTLib.GameManager.Log.Info("test:" + evt.Params["c"] + "temid:" + temid);
-                    GTLib.NetManager.KillConnection(temid);
+                    //GTLib.NetManager.KillConnection(temid);
                 });
                 Thread.Sleep(10);
             }

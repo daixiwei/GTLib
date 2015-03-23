@@ -12,7 +12,6 @@ using System.Reflection;
 using com.platform.unity.assets;
 using com.gt.coroutine;
 using com.platform.unity.coroutine;
-using pumpkin.swf;
 using com.gt.mpnet;
 
 namespace com.platform.unity
@@ -20,9 +19,12 @@ namespace com.platform.unity
     /// <summary>
     /// 
     /// </summary>
-    public abstract class UnityGameManager : MonoBehaviour,IGameManager
+    public abstract class UnityGameManager : MonoBehaviour, IGameManager
     {
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool DebugMode = true;
         /// <summary>
         /// 
         /// </summary>
@@ -73,7 +75,6 @@ namespace com.platform.unity
             GTLib.GameManager = this;
             GTLib.AssetManager = new UnityAssetManager();
             m_Services.Add(typeof(IAssetManager), GTLib.AssetManager);
-            GTLib.AssetManager.PutAssetLoader("swf", BuiltinResourceLoader.instance);
             GTLib.NetManager = new MPNetManager();
             m_Services.Add(typeof(INetManager), GTLib.NetManager);
 
@@ -102,7 +103,7 @@ namespace com.platform.unity
         {
             return (T)m_Services[typeof(T)];
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -254,9 +255,9 @@ namespace com.platform.unity
         /// <returns></returns>
         private IEnumerator LoadUnityAssetsBundle(AssetParameter[] needs, UnityAssetManager unityAssetManager)
         {
-            foreach(AssetParameter par in needs)
+            foreach (AssetParameter par in needs)
             {
-                if (par.PathType == AssetParameterType.Resources)
+                if (DebugMode)
                 {
                     UnityEngine.Object assetObject = Resources.Load(par.Path);
                     ResourcesBundle tem = new ResourcesBundle((UnityAssetManager)GTLib.AssetManager, par, assetObject);
@@ -265,30 +266,15 @@ namespace com.platform.unity
                 else
                 {
                     string path = GetPath(par);
-                    WWW www = new WWW(path + ".assetbundle");
-                    www.threadPriority = ThreadPriority.Low;
-                    yield return www;
+                    byte[] stream = File.ReadAllBytes(path);
+                    AssetBundle bundle = AssetBundle.CreateFromMemoryImmediate(stream);
                     UnityAssetsBundle tem = new UnityAssetsBundle((UnityAssetManager)GTLib.AssetManager, par);
-                    tem.SetAssetBundle(www.assetBundle);
+                    tem.SetAssetBundle(bundle);
+                    yield return tem;
                 }
             }
             yield return null;
             syLoadUnityAssetsBundle = null;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="parent"></param>
-        /// <param name="gobject"></param>
-        /// <returns></returns>
-        public static GameObject CopyGameObject(Transform parent, GameObject gobject)
-        {
-            GameObject tem1 = (GameObject)GameObject.Instantiate(gobject);
-            tem1.transform.parent = parent;
-            tem1.transform.localPosition = Vector3.zero;
-            tem1.transform.localScale = Vector3.one;
-            return tem1;
         }
 
         /// <summary>
@@ -299,41 +285,14 @@ namespace com.platform.unity
         private static string GetPath(AssetParameter parameter)
         {
             string path = "";
-            string type = parameter.PathType == AssetParameterType.PersistentDataPath ? Application.persistentDataPath : Application.streamingAssetsPath;
+            string type = Application.persistentDataPath;
 
-            if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+            string target = "android";
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
-                if (parameter.PathType == AssetParameterType.PersistentDataPath)
-                {
-                    path = ("file:///" + type + "/Pack_Android/");
-                }
-                else if (parameter.PathType == AssetParameterType.StreamingAssetsPath)
-                {
-                   path = ("file://" + type + "/");
-                }
+                target = "ios";
             }
-            else if (Application.platform == RuntimePlatform.Android)
-            {
-                if (parameter.PathType == AssetParameterType.PersistentDataPath)
-                {
-                    path = ("file:///" + type + "/Pack_Android/");
-                }
-                else if (parameter.PathType == AssetParameterType.StreamingAssetsPath)
-                {
-                    path = (type + "/");
-                }
-            }
-            else if (Application.platform == RuntimePlatform.IPhonePlayer)
-            {
-                if (parameter.PathType == AssetParameterType.PersistentDataPath)
-                {
-                    path = ("file:///" + type + "/Pack_IOS/");
-                }
-                else if (parameter.PathType == AssetParameterType.StreamingAssetsPath)
-                {
-                    path = (type + "/");
-                }
-            }
+            path = type + "/" + target;
             return path + parameter.Path;
         }
 
@@ -352,12 +311,12 @@ namespace com.platform.unity
         /// <summary>
         /// 
         /// </summary>
-        public float DeltaTime 
-        { 
-            get 
-            { 
+        public float DeltaTime
+        {
+            get
+            {
                 return Time.fixedDeltaTime;
-            } 
+            }
         }
     }
 }

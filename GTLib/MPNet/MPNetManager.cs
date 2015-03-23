@@ -113,12 +113,10 @@ namespace com.gt.mpnet
             ICollection<MessageTransmitter> tms = transmitters.Values;
             foreach (MessageTransmitter tm in tms)
             {
-
                 if (tm.PrefabConnecterId == mpnet.Id)
                 {
                     tm.SetMPNetClient(mpnet);
                 }
-
             }
         }
 
@@ -378,7 +376,7 @@ namespace com.gt.mpnet
             {
                 nc.RemoveAllEventListeners();
                 RemoveAllMessageHandlers(id);
-                nc.Disconnect();
+                nc.KillConnection();
                 lock (connecters)
                 {
                     connecters.Remove(id);
